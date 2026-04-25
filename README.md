@@ -1,4 +1,4 @@
-# Personal Portfolio — Işıl Kurt
+# Personal Portfolio
 
 A dark-themed, single-page developer portfolio built with React and Vite. Features animated sections, project case studies, a built-in article reader, and a tag-filtered articles archive — all without any routing library.
 
@@ -96,7 +96,7 @@ Core CSS variables defined in `App.css`:
 
 ```css
 --bg-dark: #070b14
---bg-panel: rgba(13, 20, 36, 0.6)   /* glassmorphism panels */
+--bg-panel: rgba(13, 20, 36, 0.6)   
 --accent-blue: #3b82f6
 --accent-cyan: #22d3ee
 --accent-purple: #c084fc
