@@ -1,5 +1,39 @@
 export const articlesData = [
   {
+    id: 'facebook-onavo-mitm',
+    badge: 'CYBERSECURITY',
+    badgeColor: '#f87171',
+    title: 'Anatomy of a Corporate MitM Attack: How Facebook Weaponized a VPN for Mobile Surveillance',
+    date: 'April 2026',
+    readTime: '7 min read',
+    tags: ['Cybersecurity', 'MitM', 'Privacy', 'Mobile Security', 'Corporate Espionage'],
+    excerpt:
+      'In 2018, Facebook pushed an application called Onavo Protect to millions of users under the guise of a privacy tool. In reality, it was a sophisticated data-harvesting payload designed to intercept, decrypt, and exfiltrate competitor telemetry data — a textbook Man-in-the-Middle attack executed at corporate scale.',
+    sections: [
+      {
+        heading: 'The Attack Vector: Acquiring Endpoint Visibility',
+        body: 'As user traffic shifted from desktop browsers — where cookies provided robust tracking — to isolated mobile applications, Facebook lost its visibility into user behavior. Mobile operating systems (iOS and Android) utilize app sandboxing, preventing one app from reading the local storage or network requests of another.\n\nTo bypass this sandbox limitation, Facebook acquired Onavo in 2013. By operating at the network layer as a VPN, Onavo could monitor the routing of all device traffic. This allowed Facebook to log DNS requests and packet headers, giving them precise telemetry on which competing apps (like WhatsApp) were being used, how often, and for how long.',
+      },
+      {
+        heading: '"Project Ghostbusters": Executing SSL/TLS Interception',
+        body: 'While DNS and routing data provided metadata, Facebook encountered a significant hurdle: competitors like Snapchat secured their traffic using HTTPS. To gain granular insights into feature usage, Facebook needed access to the encrypted payload.\n\nTo achieve this, Facebook engineers launched Project Ghostbusters, essentially deploying a deliberate Man-in-the-Middle (MitM) attack on their own users:\n\nRoot CA Installation: When users installed Onavo Protect, the app prompted them to install a custom Trusted Root Certificate Authority (CA) onto their device\'s trust store.\n\nTraffic Hijacking: Once the root certificate was trusted by the OS, Onavo routed the device\'s traffic through a custom-built Squid proxy server controlled by Facebook.\n\nDecryption and Exfiltration: Because the endpoint trusted the Onavo Root CA, the proxy could present a dynamically generated, fake certificate to the client whenever it tried to reach Snapchat\'s analytics servers. The proxy decrypted the traffic, logged the plaintext analytics data, and then re-encrypted the connection to Snapchat\'s actual servers.\n\nThis attack exploited the fact that Snapchat\'s analytics domains, at the time, lacked Certificate Pinning — a security measure that hardcodes the expected server certificate into the app, which would have instantly flagged and dropped the MitM connection.',
+      },
+      {
+        heading: 'Project Atlas: Bypassing App Store Security Controls',
+        body: 'As mobile operating systems patched vulnerabilities and hardened their network security policies, Facebook\'s visibility began to shrink. In response, they escalated their tactics with Project Atlas (marketed as the "Facebook Research" app).\n\nTo deploy this invasive packet-sniffing software, Facebook had to bypass Apple\'s strict App Store review process, which explicitly forbids apps from harvesting deep device analytics.\n\nEnterprise Certificate Abuse: Facebook exploited the Apple Enterprise Developer Program. This system is strictly designed for corporations to sideload proprietary internal apps onto employee devices via Mobile Device Management (MDM) profiles.\n\nTargeting Minors: Facebook used third-party intermediaries to pay users — many of whom were teenagers — to install these enterprise provisioning profiles.\n\nDeep Packet Inspection: This granted the application elevated privileges, allowing it to harvest an unprecedented amount of encrypted data, private messages, and real-time location metrics.',
+      },
+      {
+        heading: 'Vulnerability Mitigation and Industry Fallout',
+        body: 'The operation was ultimately burned by independent security researchers who analyzed the app\'s network behavior and reverse-engineered its payload. The fallout led to immediate remediation at the OS level:\n\nPolicy Enforcement: Apple revoked Facebook\'s Enterprise Certificates, temporarily crippling Facebook\'s internal corporate operations, and banned Onavo from the App Store for violating data collection policies.\n\nHardened Endpoints: Both iOS and Android have since heavily restricted how VPN profiles operate and made it significantly harder for third-party apps to quietly install Root CAs without highly explicit, persistent user warnings.',
+      },
+      {
+        heading: 'The Security Takeaway: Trust No VPN',
+        body: 'The Onavo incident remains a textbook case study in the dangers of third-party root certificates. It highlights a critical zero-trust principle: a VPN does not eliminate the risk of network surveillance; it merely shifts the trust from the local ISP directly to the VPN provider.\n\nWhen the provider\'s threat model aligns with corporate espionage, the "security tool" becomes the ultimate backdoor. The lesson for modern security practitioners is clear: before trusting any network intermediary with your traffic, the most important question to ask is not "Is this connection encrypted?" but rather "Who holds the keys?"',
+      },
+    ],
+    externalUrl: 'https://medium.com/@isilkurt96',
+  },
+  {
     id: 'ai-code-review-cost',
     badge: 'AI & ENGINEERING',
     badgeColor: '#c084fc',
