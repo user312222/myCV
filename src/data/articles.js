@@ -1,5 +1,39 @@
 export const articlesData = [
   {
+    id: 'apple-strategic-lateness-ai',
+    badge: 'AI & ENGINEERING',
+    badgeColor: '#c084fc',
+    title: "Apple's Strategic \"Lateness\": A Blessing in Disguise?",
+    date: 'April 2026',
+    readTime: '6 min read',
+    tags: ['Apple', 'AI', 'Strategy', 'Privacy', 'UX'],
+    excerpt:
+      'In the fast-paced world of technology, "being late" is usually seen as a white flag of surrender. However, when it comes to Apple, history has shown that this "delay" is often a calculated move to perfect the experience rather than just participate in the race.',
+    sections: [
+      {
+        heading: '"AI Fatigue" and Marketing Noise',
+        body: 'Many tech companies are slapping an "AI" label on every feature as if it\'s a universal cure. However, for the average user, this has started to become confusing and even repellant.\n\nEmpty Promises: Labeling every minor update as "AI-powered" muffles the sound of genuine innovation.\n\nThe Trust Gap: As concerns over data privacy, hallucinations, and "AI slop" (low-quality AI content) flood the internet, Apple\'s silence creates a sanctuary of reliability.',
+      },
+      {
+        heading: 'Utility Over Terminology: Features vs. Technology',
+        body: 'People don\'t buy phones to have a "Large Language Model (LLM) terminal" in their pockets. They buy them for utility.\n\nThe Siri Example: A user doesn\'t care if Siri uses a model with trillions of parameters; they just want it to turn off the kitchen lights on the first try.\n\nTechnology That Just Works: Apple focuses on how well a feature works (UI/UX harmony) rather than what it\'s called. The "Microslop" crisis — where rushed AI integration damaged Microsoft\'s reputation — is a perfect example of why moving too fast can be a liability.',
+      },
+      {
+        heading: 'The Financial Fortress and the "MacBook Neo" Effect',
+        body: "Apple's staggering $143.8 billion revenue in Q1 2026 proves that consumers don't see a lack of \"pervasive AI\" as a dealbreaker. The fact that devices like the MacBook Neo are selling out despite lacking advanced AI features shows that people still prioritize:\n\nEcosystem Synergy: Flawless interaction between devices.\n\nDesign Standards: Minimalist and modern interface (UI) quality.\n\nHardware Excellence: Reliable, cool-running, and long-lasting hardware.\n\n\"It is better to be the best than to be the first.\"",
+      },
+      {
+        heading: 'The Privacy and Ethics Barrier',
+        body: 'AI currently brings a massive energy and water consumption crisis. By moving slower and focusing on "On-Device" AI, Apple positions itself as a more sustainable and ethical choice. A model where your data never leaves your device will eventually become the ultimate "premium" feature for privacy-conscious users.',
+      },
+      {
+        heading: 'Conclusion: Wait and Command',
+        body: 'Apple may have boarded the AI train as the last wagon, but it is likely to be the most comfortable and secure one. By learning from the mistakes of its competitors, Apple is waiting to turn AI from a "showy gimmick" into an invisible, functional part of daily life. When that happens, the true value of this strategic lateness will be fully understood.',
+      },
+    ],
+    externalUrl: 'https://medium.com/@isilkurt96',
+  },
+  {
     id: 'facebook-onavo-mitm',
     badge: 'CYBERSECURITY',
     badgeColor: '#f87171',
@@ -195,6 +229,36 @@ export const articlesData = [
       {
         heading: 'The Day the Digital World Woke Up',
         body: 'The XZ Utils scandal goes far beyond a simple hack; it demonstrates the new and terrifying dimensions cyber warfare has reached. Today, it is still not definitively known which state or intelligence agency is behind the "Jia Tan" identity.\n\nHowever, this event took its place in history as a bitter warning of how carefully the open-source packages and supply chains the tech world depends on must be audited. If that half-second delay had not been noticed, the infrastructure of the digital world as we know it today could have already been irreversibly compromised.',
+      },
+    ],
+    externalUrl: 'https://medium.com/@isilkurt96',
+  },
+  {
+    id: 'asml-invisible-architect-chip-wars',
+    badge: 'HARDWARE & SEMICONDUCTORS',
+    badgeColor: '#60a5fa',
+    title: 'The Invisible Architect of the Modern World: ASML and the Secret Behind the Chip Wars',
+    date: 'April 2026',
+    readTime: '7 min read',
+    tags: ['ASML', 'Semiconductors', 'EUV', 'Geopolitics', 'Hardware'],
+    excerpt:
+      'While names like Apple, Nvidia, Intel, and Samsung are household staples, there is a far more critical player operating behind the scenes that makes their existence possible: the Dutch company ASML. Today, every facet of our digital civilization — from the smartphones in our pockets to the most advanced AI models — relies on the machines and scientific legacy of ASML.',
+    sections: [
+      {
+        heading: 'From a Small Shack to Global Sovereignty',
+        body: "ASML's journey began in 1984 as a joint venture between Philips and ASM International, initially operating out of a leaky prefab shack. At the time, the semiconductor industry was dominated by Japanese giants like Nikon and Canon. What set ASML apart was its unique strategy: instead of trying to produce everything in-house, they built a global ecosystem. By partnering with specialists like the German lens master Carl Zeiss and American laser manufacturers, ASML evolved into the conductor of the world's most complex technological orchestra.",
+      },
+      {
+        heading: 'Mastering Light: EUV Technology',
+        body: "In semiconductor manufacturing, the ultimate barrier is the physical limit of light. As chips shrink, the wavelength of light used to \"draw\" their circuits becomes too thick. ASML took a risk that the rest of the world deemed \"impossible\" by investing in EUV (Extreme Ultraviolet) technology.\n\nThe Light Source: Inside the machine, a laser strikes tiny tin droplets falling at 70 meters per second, creating a plasma 40 times hotter than the surface of the Sun.\n\nThe Precision: This process generates an ultra-fine 13.5nm light, which is guided by mirrors produced by Carl Zeiss — the smoothest surfaces on Earth. If these mirrors were scaled to the size of a country, the largest bump on them would be only 1 millimeter high.",
+      },
+      {
+        heading: 'A Geopolitical Weapon and Technological Hegemony',
+        body: "Today, ASML's machines are more than just production tools; they are the most powerful diplomatic chips in global politics. Costing upwards of $150 million each and requiring three Boeing 747s just to transport, these machines sit at the epicenter of the technological cold war between China and the United States.\n\nStrategic pressure from the U.S. has effectively turned ASML into a geopolitical dam, restricting the sale of these machines to certain regions. Copying this technology is not just a matter of money; it requires 40 years of trial and error, thousands of secret patents, and an unparalleled engineering discipline that no single nation has yet been able to replicate.",
+      },
+      {
+        heading: 'Conclusion: Power Resides in Knowledge',
+        body: "The success of ASML proves that in the modern world, true power no longer lies solely in raw materials or the final product, but in the scientific depth and collective knowledge required to create them. The company is currently pushing the boundaries of the impossible with \"High NA EUV\" technology, aimed at keeping Moore's Law alive for another decade. Humanity is quite literally building its future on the back of tiny tin droplets exploding 50,000 times per second and the flawless control of light.",
       },
     ],
     externalUrl: 'https://medium.com/@isilkurt96',
