@@ -21,6 +21,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 ::selection {
@@ -687,16 +688,140 @@ a {
   cursor: pointer;
 }
 
+/* MOBILE COLLAPSIBLE SECTIONS */
+.mobile-collapsible-btn { display: none; }
+
 /* RESPONSIVE AYARLAR */
 @media (max-width: 900px) {
-  .sidebar { width: 100%; height: 60px; flex-direction: row; padding: 0 20px; justify-content: space-between; }
-  .logo { margin: 0; }
-  .nav-links { flex-direction: row; width: auto; gap: 15px; }
-  .main-content { margin-left: 0; margin-top: 60px; padding: 30px 5%; }
-  .about-grid-new, .contact-section, .detail-meta-grid, .two-col-layout, .form-row { grid-template-columns: 1fr; }
-  .hero-title { font-size: 2.5rem; }
-  .contact-section { padding: 30px; }
-  .all-articles-page { margin-left: 0; margin-top: 60px; padding: 40px 5% 60px; }
+  .sidebar {
+    width: 100vw; max-width: 100vw; height: 60px; flex-direction: row;
+    padding: 0 16px; justify-content: space-between; align-items: center;
+    position: fixed; top: 0; left: 0; right: 0; overflow: hidden;
+    box-sizing: border-box;
+  }
+  .logo { margin: 0; flex-shrink: 0; }
+  .nav-links {
+    flex-direction: row; flex: 1; min-width: 0;
+    gap: 0; overflow-x: auto; overflow-y: hidden;
+    scrollbar-width: none; -ms-overflow-style: none;
+    justify-content: flex-end; padding-left: 12px;
+  }
+  .nav-links::-webkit-scrollbar { display: none; }
+  .nav-item {
+    font-size: 9px; letter-spacing: 0.5px; padding: 6px 7px; white-space: nowrap;
+    flex-shrink: 1;
+  }
+  .nav-item.active { border-right: none; border-bottom: 2px solid var(--accent-blue); }
+
+  .main-content {
+    margin-left: 0; margin-top: 60px; padding: 20px 5%;
+    gap: 0;
+  }
+
+  /* Hero */
+  .hero-section { min-height: auto; padding-top: 20px; padding-bottom: 40px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
+  .hero-visual { order: -1; }
+  .hero-title { font-size: 2.2rem; }
+  .hero-subtitle { font-size: 1.1rem; }
+  .hero-desc { font-size: 0.95rem; }
+  .button-group { flex-direction: column; align-items: center; gap: 10px; }
+  .btn-primary, .btn-secondary { width: 100%; max-width: 260px; text-align: center; }
+  .mac-terminal { max-width: 100%; }
+  .terminal-body { padding: 14px; font-size: 11px; min-height: 180px; }
+
+  /* Mobile collapsible */
+  .mobile-collapsible {
+    border-bottom: 1px solid var(--border-color);
+  }
+  .mobile-collapsible:first-of-type {
+    margin-top: 32px;
+    border-top: 1px solid var(--border-color);
+  }
+  .mobile-collapsible-btn {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 0;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+  .mobile-collapsible-btn:hover,
+  .mobile-collapsible-btn.open { color: var(--text-white); }
+  .mobile-collapsible-arrow {
+    font-size: 1.4rem;
+    line-height: 1;
+    color: var(--accent-blue);
+    font-weight: 300;
+    flex-shrink: 0;
+  }
+  .mobile-collapsible-body {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.45s ease, opacity 0.3s ease;
+  }
+  .mobile-collapsible-body.open {
+    max-height: 5000px;
+    opacity: 1;
+  }
+  .mobile-collapsible-body > section {
+    padding-bottom: 28px;
+  }
+
+  /* About */
+  .about-grid-new { grid-template-columns: 1fr; }
+  .profile-panel { padding: 24px 16px; }
+  .avatar-circle-large { width: 110px; height: 110px; }
+
+  /* Skills */
+  .skills-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+
+  /* Projects */
+  .projects-grid { grid-template-columns: 1fr; }
+  .projects-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+
+  /* Articles */
+  .article-card { padding: 18px 16px; }
+
+  /* Contact */
+  .contact-section {
+    grid-template-columns: 1fr; padding: 24px 20px; gap: 32px;
+  }
+  .contact-title { font-size: 1.8rem; }
+  .form-row { grid-template-columns: 1fr; }
+
+  /* Detail pages */
+  .detail-meta-grid, .two-col-layout { grid-template-columns: 1fr; }
+  .detail-title { font-size: 2rem; }
+  .detail-cover { height: 220px; }
+
+  /* All articles page */
+  .all-articles-page { margin-left: 0; margin-top: 60px; padding: 30px 5% 60px; }
   .all-articles-grid { grid-template-columns: 1fr; }
   .all-articles-header { flex-direction: column; gap: 4px; }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .main-content { padding: 16px 4%; }
+  .hero-title { font-size: 1.8rem; }
+  .hero-subtitle { font-size: 1rem; }
+  .section-title { font-size: 1.6rem; }
+  .nav-item { font-size: 8px; letter-spacing: 0.5px; padding: 6px 6px; }
+  .skills-grid { grid-template-columns: 1fr; }
+  .terminal-body { font-size: 10px; }
+  .mac-terminal { border-radius: 16px; }
+  .glass-panel { padding: 20px 16px; }
+  .contact-title { font-size: 1.5rem; }
+  .article-reader { padding: 30px 4% 50px; }
+  .article-reader-title { font-size: 1.5rem; }
 }
